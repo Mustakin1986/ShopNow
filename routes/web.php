@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
@@ -41,5 +42,13 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
 
 
  // Category controller
- Route::get('admin/Create',[CategoryController::class,'index'])->name('admin.index');
- Route::post('admin/category_store',[CategoryController::class,'storeCat'])->name('store.Category');
+ Route::get('admin/categories',[CategoryController::class,'index'])->name('Category.index');
+ Route::post('admin/categories-store',[CategoryController::class,'storeCat'])->name('store.Category');
+ Route::post('admin/categories/edit/{id}',[CategoryController::class,'CatEdit']);
+ Route::get('admin/categories/delete/{id}',[CategoryController::class,'CatDelete']);
+
+ // Brand controller
+ Route::get('admin/brand',[BrandController::class,'index'])->name('Brand.index');
+ Route::post('admin/brand-store',[BrandController::class,'storeBrnad'])->name('store.Brand');
+ Route::post('admin/brand/edit/{id}',[BrandController::class,'CatEdit']);
+ Route::get('admin/brand/delete/{id}',[BrandController::class,'CatDelete']);
