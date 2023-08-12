@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
@@ -52,3 +53,7 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
  Route::post('admin/brand-store',[BrandController::class,'storeBrnad'])->name('store.Brand');
  Route::post('admin/brand/edit/{id}',[BrandController::class,'CatEdit']);
  Route::get('admin/brand/delete/{id}',[BrandController::class,'CatDelete']);
+
+ // product controller
+ Route::get('admin/Product',[ProductController::class,'index'])->name('Product.index');
+ Route::get('admin/Product/add',[ProductController::class,'AddProduct'])->name('Product.AddProduct');

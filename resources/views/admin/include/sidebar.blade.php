@@ -35,6 +35,18 @@
         <li class="nav-item"><a href="{{ route('Category.index') }}" class="nav-link">Add Category</a></li>
         </ul>
 
+        <a href="#" class="sl-menu-link">
+            <div class="sl-menu-item">
+                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                <span class="menu-item-label">Product</span>
+                <i class="menu-item-arrow fa fa-angle-down"></i>
+            </div><!-- menu-item -->
+            </a><!-- sl-menu-link -->
+            <ul class="sl-menu-sub nav flex-column">
+            <li class="nav-item"><a href="#" class="nav-link">Add Product</a></li>
+            <li class="nav-item"><a href="{{ route('product.index') }}" class="nav-link">Product List</a></li>
+            </ul>
+
     <a href="widgets.html" class="sl-menu-link">
     <div class="sl-menu-item">
         <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
