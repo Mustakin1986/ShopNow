@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(){
+    public function ProductList(){
         return view('admin.Product.index');
     }
-    public function AddProduct(){
+    public function ProductCreate(){
         return view('admin.Product.add_product');
     }
 }

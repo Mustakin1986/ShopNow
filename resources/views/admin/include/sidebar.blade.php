@@ -43,8 +43,8 @@
             </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-            <li class="nav-item"><a href="#" class="nav-link">Add Product</a></li>
-            <li class="nav-item"><a href="{{ url('/Product/index') }}" class="nav-link">Product List</a></li>
+            <li class="nav-item"><a href="{{ url('/Product/create') }}" class="nav-link">Add Product</a></li>
+            <li class="nav-item"><a href="{{ url('/Product/ProductList') }}" class="nav-link">Product List</a></li>
             </ul>
 
     <a href="widgets.html" class="sl-menu-link">

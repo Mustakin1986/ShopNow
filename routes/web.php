@@ -55,5 +55,7 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
  Route::get('/brand/delete/{id}',[BrandController::class,'BrandDelete']);
 
  // product controller
- Route::get('admin/Product',[ProductController::class,'index'])->name('index');
- Route::get('admin/Product/AddProduct',[ProductController::class,'AddProduct'])->name('Product.AddProduct');
+ Route::get('/Product/ProductList',[ProductController::class,'ProductList']);
+ Route::get('/Product/create',[ProductController::class,'ProductCreate']);
+ Route::post('/Product/store',[ProductController::class,'ProductStore']);
+
