@@ -5,7 +5,7 @@
         <nav class="breadcrumb sl-breadcrumb">
             <row class="d-flex">
                 <div class="float-lg-right">
-                    <a class="" href="{{ route('Product.add') }}">Add Product</a>
+                    <a class="" href="{{ url('/Product/AddProduct') }}">Add Product</a>
                 </div>
             </row>
 

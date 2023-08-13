@@ -13,8 +13,9 @@
                   <table id="datatable1" class="table table-responsive">
                     <thead class="">
                       <tr class="">
-                        <th scope="col" class="col-auto">>Sl</th>
+                        <th scope="col" class="col-auto">Sl</th>
                         <th scope="col"class="col-md-auto">Category Name</th>
+                        <th scope="col"class="col-md-auto">Brand Name</th>
                         <th scope="col"class="col-md-auto">Status</th>
                         <th scope="col"class="col-md-auto">Created Date </th>
                         <th scope="col"class="col-md-auto">Action</th>
@@ -28,6 +29,7 @@
                            <tr >
                             <td>{{$i++}}</td>
                             <td class="col-md-auto">{{ $data->category_name }}</td>
+                            <td class="col-md-auto">{{ $data->id }}</td>
                             <td>
                              @if($data->status ==1)
                               <span class="badge badge-success">Active</span>

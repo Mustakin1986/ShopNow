@@ -46,14 +46,14 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
  Route::get('admin/categories',[CategoryController::class,'index'])->name('Category.index');
  Route::post('admin/categories-store',[CategoryController::class,'storeCat'])->name('store.Category');
  Route::post('admin/categories/edit/{id}',[CategoryController::class,'CatEdit']);
- Route::get('admin/categories/delete/{id}',[CategoryController::class,'CatDelete']);
+ Route::get('/categories/delete/{id}',[CategoryController::class,'CatDelete']);
 
  // Brand controller
  Route::get('admin/brand',[BrandController::class,'index'])->name('Brand.index');
- Route::post('admin/brand-store',[BrandController::class,'storeBrnad'])->name('store.Brand');
+ Route::post('admin/brand-store',[BrandController::class,'store'])->name('store.Brand');
  Route::post('admin/brand/edit/{id}',[BrandController::class,'CatEdit']);
- Route::get('admin/brand/delete/{id}',[BrandController::class,'CatDelete']);
+ Route::get('/brand/delete/{id}',[BrandController::class,'BrandDelete']);
 
  // product controller
- Route::get('admin/Product',[ProductController::class,'index'])->name('Product.index');
- Route::get('admin/Product/add',[ProductController::class,'AddProduct'])->name('Product.AddProduct');
+ Route::get('admin/Product',[ProductController::class,'index'])->name('index');
+ Route::get('admin/Product/AddProduct',[ProductController::class,'AddProduct'])->name('Product.AddProduct');

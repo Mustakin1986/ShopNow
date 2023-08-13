@@ -13,7 +13,7 @@ class BrandController extends Controller
     return view('admin.Brand.index',compact('brands'));
     }
 
-    public function storeBrnad(Request $request){
+    public function store(Request $request){
         $request->validate([
             'brand_name' => 'required |unique:brands,brand_name'
         ]);
@@ -28,9 +28,9 @@ class BrandController extends Controller
     //  return view('admin.Category.index');
     }
 
-    public function CatDelete($id){
+    public function BrandDelete($id){
        $category = Brand::find($id);
        $category->delete();
-       return redirect()->back()->with('success','Category deleted Successfully');
+       return redirect()->back()->with('success','Brand deleted Successfully');
     }
 }

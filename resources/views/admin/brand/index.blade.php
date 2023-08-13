@@ -37,8 +37,8 @@
                             </td>
                             <td>{{ $data->created_at }}</td>
                             <td>
-                             <a href="{{ url('brands/edit/'.$data->id)}}" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaldemo1"><i class="fa-regular fa-pen-to-square"></i></a>
-                             <a href="{{ url('brands/delete/'.$data->id)}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
+                             <a href="{{ url('brand/edit/'.$data->id)}}" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modaldemo1"><i class="fa-regular fa-pen-to-square"></i></a>
+                             <a href="{{ url('brand/delete/'.$data->id)}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                            </tr>
                         @endforeach
