@@ -10,7 +10,7 @@
               <div class="col-lg-12  mt-2">
                 <div class="card pd-15 pd-sm-15">
                     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
-                       <form action="{{ url('store/Product') }}" method="POST">
+                       <form action="{{ url('/Product/store') }}" method="POST">
                             @csrf
                             <div class="row row-sm mg-t-h-9">
                               <div class="col-xl-8">
@@ -53,64 +53,50 @@
                                 <thead class="items-center">
                                     <tr>
                                         <th>sl</th>
-                                        <th>Color</th>
-                                        <th>Qty</th>
+                                        <th>color_name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody class="p-0">
-                                    <tr class="p-1">
-                                        <td>1</td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control form-control-sm" placeholder="Small input">
-                                        </td>
-                                        <td></td>
-                                    </tr>
+                                <tbody id="sub_menu">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <input type="text" name="inputs[0][color_name]" class="form-control form-control-sm" placeholder="Small input">
+                                            </td>
+                                            <td><button class="remove">Remove</button></td>
+                                        </tr>
                                 </tbody>
                               </table>
+                              <td class=" col-mb-2 md-3 d-grid">
+                                <button class="btn btn-success add_btn">add</button>
+                            </td>
                            </div>
                            <div class="mg-t-30 float-lg-right mg-r-15-force">
-                            <button class="btn btn-info">Submit Form</button>
+                            <button class="btn btn-info">Submit</button>
                             <button class="btn btn-secondary">Cancel</button>
-                          </div><!
+                            </div>
+                          </div>
                         </form>
-                    </div>
                 </div><!-- card -->
               </div>
             </div>
-           {{-- @include('admin.Category.Edit'); --}}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+            <script>
+                var i = 0;
+                $(document).ready(function(){
+                    $('.add_btn').click(function(e){
+                        e.preventDefault();
+                  let tr ='<tr><td>1</td><td><input type="text" name="['+i+'][color_name]" class="form-control form-control-sm" placeholder="Small input"></td><td><button class="remove">Remove</button></td></tr>'
+                    $('#sub_menu').append(tr)
+                    });
+
+                });
+                $(document).on('click', '.remove', function(){
+               $(this).parents('tr').remove();
+              });
+
+            </script>
+
 
 @endsection
+

@@ -15,3 +15,4 @@
 <script src="{{ asset('backend') }}/js/starlight.js"></script>
 <script src="{{ asset('backend') }}/js/ResizeSensor.js"></script>
 <script src="{{ asset('backend') }}/js/dashboard.js"></script>
+

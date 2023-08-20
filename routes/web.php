@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\Colorcontroller;
+use App\Http\Controllers\Admin\ColorController as AdminColorController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\frontendController;
 use App\Http\Controllers\HomeController;
@@ -59,3 +61,5 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
  Route::get('/Product/create',[ProductController::class,'ProductCreate']);
  Route::post('/Product/store',[ProductController::class,'ProductStore']);
 
+
+ Route::post('/Product/store',[ColorController::class,'ColorStore']);
