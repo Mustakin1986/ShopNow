@@ -11,10 +11,11 @@ class ColorController extends Controller
 {
    public function ColorStore(Request $request){
         $request->validate([
-         'inputs.*.name'=>'required',
+         'inputs.*.color_name'=>'required',
+         'inputs.*.qty'=>'required'
         ]);
         foreach($request->inputs as $key => $value){
-          $color = Color::Create($value);
+         Color::Create($value);
         }
         return back()->with('success','color had been added');
       }

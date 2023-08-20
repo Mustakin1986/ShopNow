@@ -59,7 +59,6 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
  // product controller
  Route::get('/Product/ProductList',[ProductController::class,'ProductList']);
  Route::get('/Product/create',[ProductController::class,'ProductCreate']);
- Route::post('/Product/store',[ProductController::class,'ProductStore']);
 
 
  Route::post('/Product/store',[ColorController::class,'ColorStore']);

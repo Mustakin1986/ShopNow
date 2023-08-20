@@ -54,6 +54,7 @@
                                     <tr>
                                         <th>sl</th>
                                         <th>color_name</th>
+                                        <th>Qty</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -62,6 +63,9 @@
                                             <td>1</td>
                                             <td>
                                                 <input type="text" name="inputs[0][color_name]" class="form-control form-control-sm" placeholder="Small input">
+                                            </td>
+                                            <td>
+                                                <input type="number" name="inputs[0][qty]" class="form-control form-control-sm" placeholder="Small input">
                                             </td>
                                             <td><button class="remove">Remove</button></td>
                                         </tr>
@@ -85,8 +89,9 @@
                 var i = 0;
                 $(document).ready(function(){
                     $('.add_btn').click(function(e){
+                        ++i;
                         e.preventDefault();
-                  let tr ='<tr><td>1</td><td><input type="text" name="['+i+'][color_name]" class="form-control form-control-sm" placeholder="Small input"></td><td><button class="remove">Remove</button></td></tr>'
+                  let tr ='<tr><td>1</td><td><input type="text" name="inputs['+i+'][color_name]" class="form-control form-control-sm" placeholder="Small input"><td><input type="number" name="inputs['+i+'][qty]" class="form-control form-control-sm" placeholder="Small input"></td></td><td><button class="remove">Remove</button></td></tr>'
                     $('#sub_menu').append(tr)
                     });
 
